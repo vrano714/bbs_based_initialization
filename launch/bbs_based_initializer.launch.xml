@@ -1,0 +1,7 @@
+<launch>
+  <arg name="config_file" default="$(find-pkg-share bbs_based_initializer)/config/bbs_based_initializer.param.yaml"/>
+
+  <node pkg="bbs_based_initializer" exec="bbs_based_initializer" name="bbs_based_initializer" output="both">
+    <param name="config" value="$(var config_file)"/>
+  </node>
+</launch>
