@@ -10,6 +10,8 @@ At first, install GPU version of 3D-BBS following the original repo [https://git
 
 Then clone this repository into your ROS2 workspace and build.
 
+Note that you may need to install `ros-${ROSDISTRO}-ament-cmake-auto` to build the package.
+
 ## Run
 
 Write your config in `config/bbs_based_initializer.param.yaml` such as topic names, 3D-BBS params.
@@ -24,7 +26,7 @@ Sending `Bool` message to the trigger topic will run localization, after run, in
 Example (to send from a command line):
 
 ```bash
-ros2 topic pub -1 std_msgs/Bool /bbs_localize "{data: true}"
+ros2 topic pub -1 /bbs_localize std_msgs/Bool　"{data: true}"
 # note that /bbs_localize can be changed by editing config
 ```
 
